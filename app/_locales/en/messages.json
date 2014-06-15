@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "VolumeHub",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Control Volume",
+    "description": "The description of the application"
+  }
+}

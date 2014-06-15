@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- bower:css -->
+        <!-- endbower -->
+
+        <!-- build:css styles/main.css -->
+        <link href="styles/main.css" rel="stylesheet">
+        <!-- endbuild -->
+
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <!-- endbower -->
+
+        <!-- build:js scripts/popup.js -->
+        <script src="scripts/popup.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body ng-app="VolumeHub" ng-controller="PopupController">
+      <h1>Set Your Volume</h1>
+      <input type="text" ng-model="volumeVal" ng-change="save()">
+    </body>
+</html>
