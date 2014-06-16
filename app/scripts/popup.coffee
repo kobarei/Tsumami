@@ -8,3 +8,4 @@ app.controller "PopupController", ($scope) ->
 
   $scope.save = () ->
     chrome.storage.sync.set { myset: $scope.volumeVal }
+    chrome.browserAction.setBadgeText { text: $scope.volumeVal }

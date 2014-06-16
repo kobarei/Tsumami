@@ -11,8 +11,11 @@
       });
     });
     return $scope.save = function() {
-      return chrome.storage.sync.set({
+      chrome.storage.sync.set({
         myset: $scope.volumeVal
+      });
+      return chrome.browserAction.setBadgeText({
+        text: $scope.volumeVal
       });
     };
   });

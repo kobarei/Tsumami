@@ -4,12 +4,14 @@
     return console.log('previousVersion', details.previousVersion);
   });
 
-  chrome.browserAction.setBadgeText({
-    text: '\'Allo'
+  chrome.storage.sync.get('myset', function(obj) {
+    var val;
+    val = obj.myset;
+    return chrome.browserAction.setBadgeText({
+      text: val
+    });
   });
 
   console.log('\'Allo \'Allo! Event Page for Browser Action');
-
-  console.log(chrome.storage.sync);
 
 }).call(this);

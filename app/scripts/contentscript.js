@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  var functions, host;
+  var functions, host, tsumami;
 
   host = window.location.host;
 
@@ -12,13 +12,14 @@
     }
   };
 
-  chrome.storage.sync.get('myset', function(obj) {
-    var theFunction, val;
-    val = obj.myset;
-    theFunction = functions[host];
-    if (theFunction) {
-      return theFunction(val);
-    }
-  });
+  tsumami = functions[host];
+
+  if (tsumami) {
+    chrome.storage.sync.get('myset', function(obj) {
+      var val;
+      val = obj.myset;
+      return tsumami(val);
+    });
+  }
 
 }).call(this);

@@ -3,7 +3,8 @@
 chrome.runtime.onInstalled.addListener (details) ->
     console.log('previousVersion', details.previousVersion)
 
-chrome.browserAction.setBadgeText({text: '\'Allo'})
+chrome.storage.sync.get 'myset', (obj) ->
+  val = obj.myset
+  chrome.browserAction.setBadgeText({text: val})
 
 console.log('\'Allo \'Allo! Event Page for Browser Action')
-console.log chrome.storage.sync
